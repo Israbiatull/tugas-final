@@ -24,6 +24,7 @@ class CreateBiodatasTable extends Migration
             $table->string('status');
             $table->string('kewarganegaraan');
             $table->string('pendidikan_terakhir');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }

@@ -21,8 +21,12 @@
             <td>{{ $member->nim }}</td>
             <td>{{ $member->status }}</td>
             <td>
-                <a href="" class="btn btn-danger">hapus</a>
-                <a href="" class="btn btn-info">edit</a>
+                @auth
+                    <a href="" class="btn btn-danger">hapus</a>
+                    <a href="" class="btn btn-info">edit</a>
+                @else
+                    <a href="/biodata/{{ $member->id }}" class="btn btn-success">detail</a>
+                @endauth
             </td>
         </tr>
         @endforeach
