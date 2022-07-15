@@ -7,10 +7,10 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">nama</th>
-        <th scope="col">nim</th>
-        <th scope="col">status</th>
-        <th scope="col">aksi</th>
+        <th scope="col">Nama</th>
+        <th scope="col">NIM</th>
+        <th scope="col">Status</th>
+        <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -22,14 +22,23 @@
             <td>{{ $member->status }}</td>
             <td>
                 @auth
-                    <a href="" class="btn btn-danger">hapus</a>
-                    <a href="" class="btn btn-info">edit</a>
+                <form action="/biodata/{{ $member->id }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+                    <a href="/biodata/{{ $member->id }}" class="btn btn-info">Edit</a>
                 @else
-                    <a href="/biodata/{{ $member->id }}" class="btn btn-success">detail</a>
+                    <a href="/biodata/{{ $member->id }}" class="btn btn-success">Detail</a>
                 @endauth
             </td>
         </tr>
         @endforeach
+        <tr>
+          <td colspan="5" >
+            <a href="/biodata" class="btn btn-success">tambah data</a>
+          </td>
+        </tr>
     </tbody>
   </table>
 @endsection

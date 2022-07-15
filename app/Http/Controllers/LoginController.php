@@ -21,12 +21,21 @@ class LoginController extends Controller
         'password' => $request->password
       ];
 
+
       if(Auth::attempt($credentials)){
-        $request->session()->regenerate();
         return redirect()->intended('/');
       }
 
       return back();
+
+    }
+
+    public function logout(Request $request){
+
+      Auth::logout();
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();
+      return redirect('/');
 
     }
 }

@@ -7,7 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a href="/login" class="nav-link {{ ($title === "login") ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+        @auth
+          <form action="/logout" method="post">
+            @csrf
+            <button type="submit" class="btn btn-light text-dangeri" >logout</button>
+          </form>
+        @else
+          <a href="/login" class="nav-link {{ ($title === "login") ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+        @endauth
       </li>
 
       </ul>

@@ -8,6 +8,7 @@
 
   <form action="/login" method="POST">
 
+    @method('post')
     @csrf
 
       <div class="form-floating">
