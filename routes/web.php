@@ -17,6 +17,8 @@ use App\Http\Controllers\BiodataController;
 */
 //pemanggilan home
 Route::get('/', [BiodataController::class, 'index']);
+Route::get('/biodata/', [BiodataController::class, 'add']);
+Route::post('/biodata/', [BiodataController::class, 'store']);
 Route::get('/biodata/{biodata}', [BiodataController::class, 'show']);
 Route::put('/biodata/{biodata}', [BiodataController::class, 'update']);
 Route::delete('/biodata/{biodata}', [BiodataController::class, 'destroy']);

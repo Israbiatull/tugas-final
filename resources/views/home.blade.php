@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Home</h1>
+<h1>Dashboard</h1>
 
 <table class="table">
     <thead>

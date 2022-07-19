@@ -8,7 +8,7 @@
 
     <div class="row g-5">
       <div class="col-md-7 col-lg-8">
-        <form class="needs-validation" enctype="multipart/form-data" action="/biodata/{{ $data->id }}" method="post">
+        <form class="needs-validation" enctype="multipart/form-data" action="/biodata/" method="post">
 
           @csrf
 
@@ -65,7 +65,7 @@
           <hr class="my-4">
 
           @auth
-            <button class="w-100 btn btn-primary btn-lg" type="submit">ubah</button>
+            <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">tambah</button>
           @else
             <a href="/" class="btn btn-info">Kembali</a>
           @endauth

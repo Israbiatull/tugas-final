@@ -58,17 +58,17 @@ class DatabaseSeeder extends Seeder
             'pendidikan_terakhir' => 'SMA 18 Bulukumba',
         ]);
 
-        // Biodata::create([
-        //     'nim' => '60200120061',
-        //     'nama' => 'Musfirah Nurul Fuadi',
-        //     'ttl' => '-',
-        //     'jk' => 'Perempuan',
-        //     'alamat' => '-',
-        //     'agama' => 'Islam',
-        //     'status' => 'Mahasiswi',
-        //     'kewarganegaraan' => 'Indonesia',
-        //     'pendidikan_terakhir' => '-',
-        // ]);
+        Biodata::create([
+            'nim' => '60200120061',
+            'nama' => 'Musfirah Nurul Fuadi',
+            'ttl' => 'Makassar, 01 Maret 2003',
+            'jk' => 'Perempuan',
+            'alamat' => 'Jl. Aroepala 43',
+            'agama' => 'Islam',
+            'status' => 'Mahasiswi',
+            'kewarganegaraan' => 'Indonesia',
+            'pendidikan_terakhir' => 'SMK Nasional',
+        ]);
 
         // Biodata::create([
         //     'nim' => '60200120140',

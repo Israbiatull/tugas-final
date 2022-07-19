@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Home</h1>
+<h1>Biodata Detail</h1>
 
 <div class="container">
   <main>

@@ -14,6 +14,33 @@ class BiodataController extends Controller
         ]);
     }
 
+    public function store(Request $request){
+
+        if($request->file('gambar')){
+            $gambar = $request->file('gambar')->store('member');
+        }
+
+        Biodata::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'ttl' => $request->ttl,
+            'jk' => $request->jk,
+            'alamat' => $request->alamat,
+            'agama' => $request->agama,
+            'status' => $request->status,
+            'kewarganegaraan' => $request->kewarganegaraan,
+            'pendidikan_terakhir' => $request->pendidikan_terakhir,
+            'gambar' => $gambar ?? null,
+        ]);
+
+        return redirect('/')->with('success', 'data berhasil ditambah');
+
+    }
+
+    public function add(){
+        return view('tambah', ['title' => 'tambah']);
+    }
+
     public function show(Biodata $biodata){
 
         $data = Biodata::find($biodata->id);
